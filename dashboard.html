@@ -411,6 +411,25 @@ nav.rail a .n{color:var(--line-2)}
 .prototype-note{padding:10px 13px;border-left:3px solid var(--line-2);background:var(--surface-2);color:var(--ink-2);font-size:var(--fs-s);margin-bottom:12px}
 @media(max-width:520px){.workspace-bar{gap:8px;padding:10px 12px}.workspace-nav{width:100%}.workspace-nav a{padding:7px 9px}.workspace-name{font-size:15px}}
 @media print{.workspace-bar,.workspace-skip,.research-bridge{display:none!important}}
+
+/* 한국어부터 읽을 수 있는 학습 동선 */
+.workspace-nav .korean-study-link{color:var(--accent);font-weight:700;border:1px solid var(--accent-soft)}
+.korean-reading-start{margin:18px 0 26px;padding:22px;border:1px solid var(--line);border-top:3px solid var(--accent);border-radius:12px;background:var(--surface)}
+.korean-reading-intro>span{font-size:12px;font-weight:700;color:var(--accent)}
+.korean-reading-intro h3{font-size:22px;margin:8px 0;line-height:1.4}
+.korean-reading-intro p{color:var(--ink-2);font-size:14px;margin:0 0 18px}
+.korean-reading-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.korean-reading-cards>a{display:flex;flex-direction:column;gap:8px;border:1px solid var(--line);border-radius:9px;background:var(--surface-2);padding:17px;color:var(--ink);text-decoration:none}
+.korean-reading-cards>a:hover{border-color:var(--accent);background:var(--accent-soft)}
+.korean-reading-cards b{font-size:16px}.korean-reading-cards span{font-size:13px;color:var(--ink-2);line-height:1.65}.korean-reading-cards em{margin-top:auto;font-size:12px;font-style:normal;color:var(--accent)}
+.korean-term-help{margin-top:18px;border-top:1px solid var(--line);padding-top:12px;font-size:14px}
+.korean-term-help summary,.foreign-library>summary{cursor:pointer;font-weight:700;color:var(--accent);padding:8px 0}
+.korean-term-help dl{display:grid;grid-template-columns:150px 1fr;gap:10px 16px;margin:14px 0}
+.korean-term-help dt{font-weight:700}.korean-term-help dd{margin:0;color:var(--ink-2)}
+.foreign-library{margin-top:28px;padding:16px 20px;border:1px solid var(--line);border-radius:10px}.foreign-library>summary{font-size:15px}.foreign-library>p{margin:12px 0 18px}
+.korean-domestic-link{display:flex;flex-wrap:wrap;gap:8px 18px;margin:18px 0;padding:13px 16px;background:var(--accent-soft);border-radius:8px;font-size:13px}.korean-domestic-link a{font-weight:700}.korean-domestic-link span{color:var(--ink-2)}
+@media(max-width:700px){.korean-reading-start{padding:17px}.korean-reading-cards{grid-template-columns:1fr}.korean-term-help dl{grid-template-columns:1fr;gap:4px}.korean-term-help dd{margin-bottom:12px}.foreign-library{padding:12px}.workspace-nav{gap:2px}}
+
 </style>
 <script>
   // 저장된 테마를 그리기 전에 적용 (localStorage 실패 시 시스템 설정을 따른다)
@@ -425,6 +444,7 @@ nav.rail a .n{color:var(--line-2)}
     <nav class="workspace-nav" aria-label="연구실 메뉴">
       <a href="./index.html">홈</a>
       <a href="./lesson-2026-10-27.html">오늘의 학습</a>
+      <a class="korean-study-link" href="./korean-study.html">한국어 논문·공부방</a>
       <a href="./research.html">연구 노트</a>
       <a href="./dashboard.html" aria-current="page">학습실</a>
     </nav>
@@ -432,7 +452,7 @@ nav.rail a .n{color:var(--line-2)}
   <div class="top-in">
     <div class="brand">
       <h1>게이미피케이션 선행연구</h1>
-      <span class="sub">v2 · 조회 기준일 2026-10-25 · 박사논문 선행연구 학습판</span>
+      <span class="sub">한국어로 읽는 학습·연구 도구 · 기존 자료 조회 기준일 2026-10-25</span>
     </div>
     <div class="tierbar" role="group" aria-label="근거 등급 필터">
       <span class="lbl">근거 등급</span>
@@ -468,7 +488,7 @@ nav.rail a .n{color:var(--line-2)}
     <a href="#concept"><span class="n">·</span><span>개념 경계 랩</span></a>
     <a href="#effects"><span class="n">·</span><span>효과 근거</span></a>
     <a href="#patterns"><span class="n">·</span><span>설계 패턴</span></a>
-    <a href="#library"><span class="n">·</span><span>최다 피인용 서재</span></a>
+    <a href="#library"><span class="n">·</span><span>한국어 논문 서재</span></a>
     <a href="#korea"><span class="n">·</span><span>국내 연구</span></a>
     <a href="#trends"><span class="n">·</span><span>계량서지·국가 편중</span></a>
     <a href="#refs"><span class="n">·</span><span>참고문헌</span></a>
@@ -6463,7 +6483,7 @@ window.DATA_QUESTS = {
   const fmt = n => n == null || n === '' || isNaN(n) ? '–' : Number(n).toLocaleString('ko-KR');
   const doiUrl = d => 'https://doi.org/' + String(d).replace(/^https?:\/\/(dx\.)?doi\.org\//, '');
   const isDoi = d => /^10\.\d{4,}\//.test(String(d || '').trim());
-  const doiLink = (d, label) => isDoi(d) ? `<a href="${esc(doiUrl(d.trim()))}" target="_blank" rel="noopener">${esc(label || 'DOI')}</a>` : '';
+  const doiLink = (d, label) => isDoi(d) ? `<a href="${esc(doiUrl(d.trim()))}" target="_blank" rel="noopener">${esc(label || '논문 상세 보기')}</a>` : '';
   const ext = (u, label) => u && /^https?:/.test(u) ? `<a href="${esc(u)}" target="_blank" rel="noopener">${esc(label || '링크')}</a>` : '';
   const encPath = p => p.split('/').map(encodeURIComponent).join('/');
   // 중복 정리로 옮겨진 옛 파일명은 DATA_FILES.alias 로 남긴 파일명에 연결한다
@@ -6509,7 +6529,7 @@ window.DATA_QUESTS = {
     return `<div class="tblwrap"${opts.max ? ` style="max-height:${opts.max}px"` : ''}><table><thead><tr>${t.head.map(h => `<th>${h}</th>`).join('')}</tr></thead><tbody>${t.body.map(r => `<tr>${r.map(c => `<td>${c}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
   };
   const secHead = (n, title, lead) => `<div class="sec-head"><span class="eyebrow">${n}</span><h2>${title}</h2>${lead ? `<p class="lead">${lead}</p>` : ''}</div>`;
-  const yn = v => v === 'Y' ? '<span class="yn y">Y</span>' : v === '부분' ? '<span class="yn y">부분</span>' : '';
+  const yn = v => v === 'Y' ? '<span class="yn y">해당</span>' : v === '부분' ? '<span class="yn y">부분</span>' : '';
 
   // ---------- chart tooltip ----------
   const ctip = document.createElement('div'); ctip.className = 'ctip'; ctip.hidden = true; document.body.appendChild(ctip);
@@ -6978,18 +6998,21 @@ ${arrow(758, 91, 744, 91, 'var(--s7)', true)}${arrow(742, 257, 756, 257, 'var(--
   const read = store.get('read', {});
   function renderLibrary() {
     const cats = Array.from(new Set(LIB.items.map(i => i.cat)));
-    return `${secHead('08 · 최다 피인용 서재', '많이 인용된 문헌을 직접 확인하기', '범주별 상위 피인용 195편입니다. 피인용 수는 Semantic Scholar(현재값·캐시)와 Crossref 중 최댓값입니다. 박사논문이 상위 목록에 없는 것은 인용 수 기준이기 때문입니다.')}
-      <h3 class="sub" style="margin-top:0">처음 읽는 순서</h3>
+    return `${secHead('08 · 한국어 논문 서재', '한국어로 읽는 논문 서재', '한국어로 읽을 자료부터 고르고, 설명과 확인 질문을 따라 공부하세요. 원문의 언어와 이용 가능 여부는 논문마다 확인해 구분합니다.')}
+      ${koreanReadingStart()}
+      <details class="foreign-library"><summary>해외 문헌 서지정보 보기 · 선택 사항</summary>
+      <p class="note">이 아래는 기존 해외 문헌 목록입니다. 영문 제목과 원문을 포함하므로, 한국어 공부는 위의 한국어 논문·공부방에서 시작하세요. 제목을 한국어로 바꾸었다고 원문 전체가 한국어가 되는 것은 아닙니다.</p>
+      <h3 class="sub">기존 해외 문헌 읽기 순서</h3>
       <div class="path">${CT.readingPath.map(p => `<div class="pstep${read[p.step] ? ' done' : ''}"><span class="num">${p.step}</span><div><b>${esc(p.t)}</b> <span class="small muted">— ${esc(p.why)}</span><div class="xs muted">${esc(p.get)} ${doiLink(p.doi)} ${p.local ? pdfLink(p.local) : ''}</div></div><label><input type="checkbox" data-read="${p.step}" ${read[p.step] ? 'checked' : ''}> 읽음</label></div>`).join('')}</div>
       <h3 class="sub">서재 195편</h3>
       <div class="tbl-tools">
         <select id="lbCat"><option value="">모든 범주</option>${cats.map(c => `<option value="${esc(c)}" ${lf.cat === c ? 'selected' : ''}>${esc(c.replace('_', ' · '))}</option>`).join('')}</select>
-        <select id="lbOa"><option value="">원문 상태 전체</option><option value="local" ${lf.oa === 'local' ? 'selected' : ''}>로컬 PDF 있음</option><option value="oa" ${lf.oa === 'oa' ? 'selected' : ''}>OA (무료)</option><option value="closed" ${lf.oa === 'closed' ? 'selected' : ''}>구독·단행본</option></select>
+        <select id="lbOa"><option value="">원문 상태 전체</option><option value="local" ${lf.oa === 'local' ? 'selected' : ''}>로컬 PDF 있음</option><option value="oa" ${lf.oa === 'oa' ? 'selected' : ''}>무료 공개 원문</option><option value="closed" ${lf.oa === 'closed' ? 'selected' : ''}>구독·단행본</option></select>
         <select id="lbSort"><option value="cat">범주·순위순</option><option value="c" ${lf.sort === 'c' ? 'selected' : ''}>피인용 많은 순</option><option value="y" ${lf.sort === 'y' ? 'selected' : ''}>최신순</option></select>
         <input type="search" id="lbQ" placeholder="제목·저자·학술지 검색" value="${esc(lf.q)}"><span class="count" id="lbCount"></span>
       </div>
       <div class="lib" id="lbList"></div>
-      <p class="note" style="margin-top:10px">구독 논문 확보 경로: 대학 도서관 전자저널 → RISS 해외전자자료·원문복사 → 저자에게 요청 → Google Scholar 전체 버전. 저자 자격은 S2 h-index ≥ 10 근사 기준이며 [저자확인 필요]가 붙은 문헌은 원문 소속을 확인해야 합니다.</p>`;
+      <p class="note" style="margin-top:10px">구독 논문 확보 경로: 대학 도서관 전자저널 → RISS 해외전자자료·원문복사 → 저자에게 요청 → Google Scholar 전체 버전. 저자 자격은 S2 h-index ≥ 10 근사 기준이며 [저자확인 필요]가 붙은 문헌은 원문 소속을 확인해야 합니다.</p></details>`;
   }
   function libList() {
     let l = LIB.items.filter(i => passTier(i.tier));
@@ -7005,7 +7028,7 @@ ${arrow(758, 91, 744, 91, 'var(--s7)', true)}${arrow(742, 257, 756, 257, 'var(--
       <div class="rk">${esc(i.cat[0])}${i.rank ? '·' + i.rank : ''}<b>${fmt(i.c)}</b>회</div>
       <div class="stack" style="gap:4px;min-width:0">
         <div class="tt">${esc(i.t)}</div>
-        <div class="meta">${esc(i.a)} (${esc(i.y)}). <i>${esc(i.v)}</i>. ${doiLink(i.doi)} ${i.local ? pdfLink(i.local) : i.oaUrl ? ext(i.oaUrl, 'OA 사본') : ''}</div>
+        <div class="meta">${esc(i.a)} (${esc(i.y)}). <i>${esc(i.v)}</i>. ${doiLink(i.doi)} ${i.local ? pdfLink(i.local) : i.oaUrl ? ext(i.oaUrl, '무료 공개본') : ''}</div>
         <div class="badges">${tierChip(i.tier, i.tierRaw)} ${i.needAuthor ? '<span class="chip f-chk">저자확인 필요</span>' : ''} <span class="chip f-non">${esc(i.oa.split(' ')[0])}</span> <span class="chip f-non">${esc(i.rtype)}</span> <span class="chip f-non">${esc(catName(i.cat))}</span></div>
         ${i.why ? `<div class="why">${esc(i.why)}</div>` : ''}
         <details><summary>원문 확보·검증 정보</summary><p style="margin-top:6px">${esc(i.route || '—')}</p><p class="xs muted" style="margin-top:4px">피인용 출처: ${esc(i.cs)} · 저자 확인: ${esc(i.authorCheck)}${i.fail ? ' · 다운로드 실패: ' + esc(i.fail) : ''}${i.note ? ' · ' + esc(i.note) : ''}</p></details>
@@ -7023,8 +7046,9 @@ ${arrow(758, 91, 744, 91, 'var(--s7)', true)}${arrow(742, 257, 756, 257, 'var(--
   // =====================================================================
   const kf = { elem: false, board: false, adapt: false, scope: '', q: '' };
   function renderKorea() {
-    const tabs = [['cod', '박사논문 코딩 ' + (COD.items.length || '') + '편'], ['doc', '박사논문 87편'], ['jr', '교수참여 KCI 39편'], ['p', '지정 논문 P1·P2'], ['frame', 'P1 갱신 코딩틀 25'], ['rev', '비교 리뷰'], ['adv', '지도교수·연구 그룹']];
+    const tabs = [['cod', '박사논문 코딩 ' + (COD.items.length || '') + '편'], ['doc', '박사논문 87편'], ['jr', '교수참여 국내 등재학술지 39편'], ['p', '지정 논문 P1·P2'], ['frame', 'P1 갱신 코딩틀 25'], ['rev', '비교 리뷰'], ['adv', '지도교수·연구 그룹']];
     return `${secHead('09 · 국내 연구', '국내 박사논문과 교수 참여 논문', 'RISS 국내박사 필터와 검색어 12개로 1,185편을 모아 2015–2026년 교육 관련 핵심 79편과 경계 8편을 골랐습니다. 협력 이론(사회적 상호의존)을 쓴 박사논문은 거의 없고, 적응형을 직접 다룬 교수 참여 KCI 논문은 0편입니다.')}
+      <div class="korean-domestic-link"><a href="./korean-study.html">한국어 원문을 확인한 논문부터 읽기 →</a><span>아래는 기존 국내 연구 목록입니다. 원문 공개 여부는 개별 제공처에서 확인하세요.</span></div>
       <div class="subtabs" role="tablist">${tabs.map(([k, l]) => `<button type="button" role="tab" data-ksub="${k}" aria-selected="${sub.korea === k}">${l}</button>`).join('')}</div>
       <div id="koreaBody"></div>`;
   }
@@ -7378,11 +7402,11 @@ ${arrow(758, 91, 744, 91, 'var(--s7)', true)}${arrow(742, 257, 756, 257, 'var(--
   // =====================================================================
   // 10 REFS
   // =====================================================================
-  const rf = { g: '', q: '', corr: false };
+  const rf = { g: '국내', q: '', corr: false };
   function renderRefs() {
     return `${secHead('14 · 참고문헌', '보고서 참고문헌 111건과 품질 등급', 'G 감사의 등급과 서지 정정을 함께 표시합니다. 정정 사항은 보고서 본문에는 아직 반영되지 않았습니다(v2 보고서에서 반영 예정).')}
       <div class="statusline" style="margin-bottom:12px">${Object.entries(QU.counts).map(([k, v]) => `<div class="stat"><div class="k">${esc(k)}</div><div class="v">${v}</div></div>`).join('')}<div class="stat"><div class="k">박사논문</div><div class="v">0</div><div class="d">국내 박사논문은 05 국내 연구 탭에 따로 정리</div></div></div>
-      <div class="tbl-tools"><select id="rfG"><option value="">국외 + 국내 + 정책</option><option>국외</option><option>국내</option><option>정책·법령</option></select><label class="small"><input type="checkbox" id="rfC"> 정정 사항 있는 것만</label><input type="search" id="rfQ" placeholder="저자·제목 검색"><span class="count" id="rfCount"></span></div>
+      <div class="tbl-tools"><select id="rfG" aria-label="참고문헌 범위"><option value="" ${rf.g === '' ? 'selected' : ''}>모든 참고문헌</option><option value="국외" ${rf.g === '국외' ? 'selected' : ''}>해외 문헌 · 원문 표기</option><option value="국내" ${rf.g === '국내' ? 'selected' : ''}>국내 문헌</option><option value="정책·법령" ${rf.g === '정책·법령' ? 'selected' : ''}>정책·법령</option></select><label class="small"><input type="checkbox" id="rfC"> 정정 사항 있는 것만</label><input type="search" id="rfQ" placeholder="저자·제목 검색"><span class="count" id="rfCount"></span></div>
       <div class="refs" id="rfList"></div>`;
   }
   function refList() {
@@ -7723,6 +7747,21 @@ ${arrow(758, 91, 744, 91, 'var(--s7)', true)}${arrow(742, 257, 756, 257, 'var(--
   });
 
   // ----- 00 처음 읽는 안내
+  function koreanReadingStart() {
+    return `<div class="korean-reading-start">
+      <div class="korean-reading-intro"><span>한국어 학습 안내</span><h3>영어를 읽지 않아도, 개념부터 논문까지.</h3><p>먼저 한국어 공부방에서 원문과 쉬운 풀이를 읽고, 관심 주제를 이 학습실의 도구로 더 살펴보세요.</p></div>
+      <div class="korean-reading-cards">
+        <a href="./korean-study.html"><b>한국어 논문·공부방</b><span>확인한 한국어 원문, 읽을 순서, 공부할 질문</span><em>여기서 시작하기 →</em></a>
+        <a href="#korea"><b>국내 연구 더 찾아보기</b><span>국내 박사논문과 학술지 논문 목록 탐색</span><em>국내 연구 목록 →</em></a>
+        <a href="#dict"><b>어려운 용어 풀어 읽기</b><span>연구 개념을 쉬운 설명과 교실 예시로 익히기</span><em>개념 사전 →</em></a>
+      </div>
+      <details class="korean-term-help"><summary>자주 나오는 기호와 용어를 쉬운 말로 읽기</summary>
+        <dl><dt>게임 기반 학습</dt><dd>배울 내용을 담은 게임을 직접 하며 배우는 방식입니다.</dd><dt>게이미피케이션</dt><dd>일반 수업이나 과제에 미션·성장 단계·피드백 같은 게임 요소를 넣는 방식입니다.</dd><dt>자기결정성 이론</dt><dd>스스로 선택하는 느낌, 해낼 수 있다는 느낌, 동료와 연결된 느낌이 동기에 어떤 역할을 하는지 설명합니다.</dd><dt>효과크기</dt><dd>수업 방식에 따라 결과가 얼마나 달라졌는지를 비교하는 숫자입니다. 어떤 학습자와 수업을 비교했는지 함께 읽습니다.</dd><dt>메타분석</dt><dd>여러 연구의 결과를 같은 기준으로 바꾸어 통계적으로 종합하는 방법입니다.</dd><dt>체계적 문헌고찰</dt><dd>자료를 찾고 고르는 기준을 먼저 정한 뒤 관련 연구를 빠짐없이 정리하는 방법입니다.</dd><dt>기준 1~9</dt><dd>기존 자료의 영문자와 숫자로 된 기호는 설계를 살피는 아홉 질문의 번호입니다. 기호에 마우스를 올리거나 선택하면 한국어 풀이를 볼 수 있습니다.</dd></dl>
+        <p class="note">영문 약어를 외울 필요는 없습니다. 실제 활동과 한국어 설명을 먼저 이해하면 됩니다.</p>
+      </details>
+    </div>`;
+  }
+
   function renderGuide() {
     const steps = [
       ['이 안내 읽기', '아래 "기호 읽는 법" 카드를 위에서부터 차례로 읽습니다. 대시보드 전체에서 쓰는 기호가 모두 여기서 설명됩니다.', 'guide'],
@@ -7737,6 +7776,7 @@ ${arrow(758, 91, 744, 91, 'var(--s7)', true)}${arrow(742, 257, 756, 257, 'var(--
       ['연구 방법 다지기', '전문가 과정 L04(효과 근거 읽기)·L10(연구 방법)과 "연구 설계 도구"로 내 연구를 설계합니다.', 'learn']
     ];
     return `${secHead('', '이 대시보드를 읽는 법', '선행연구를 정리하면서 긴 개념을 짧은 기호로 줄여 썼습니다. 예를 들어 "D8 S3"은 "사회 구조 기준(D8)으로 보면, 학생 전원이 함께 게임과 맞서 같이 이기고 지는 순수 협동(S3)"이라는 뜻입니다. 이 안내에서 기호 읽는 법을 먼저 익히면 나머지 섹션을 훨씬 쉽게 읽을 수 있습니다. 본문에 나오는 기호에 마우스를 올리면 뜻이 뜨고, 누르면 개념 사전으로 이동합니다.')}
+      ${koreanReadingStart()}
       <div class="callout" style="margin-bottom:14px"><b>"코딩"이라는 말</b> — 이 대시보드에서 코딩은 프로그래밍이 아닙니다. 연구 방법에서 말하는 <b>질적 코딩</b>, 즉 논문 한 편을 정해진 기준에 따라 읽고 각 기준에 해당하는 값을 붙이는 분류 작업입니다. 예를 들어 "박사논문 18편을 D1–D9로 코딩했다"는 말은 "논문 18편 각각이 아홉 가지 기준에서 어디에 해당하는지 판정해 표로 만들었다"는 뜻입니다.</div>
       <h3 class="sub" style="margin-top:0">추천 학습 순서</h3>
       <ol class="route">${steps.map(([t, b, s], i) => `<li><a href="#${s}"><span class="rn">${i + 1}</span><span><b>${esc(t)}</b><span class="small">${esc(b)}</span></span></a></li>`).join('')}</ol>
@@ -7975,7 +8015,7 @@ ${arrow(758, 91, 744, 91, 'var(--s7)', true)}${arrow(742, 257, 756, 257, 'var(--
     let el = $('#s-' + id);
     if (!el) { el = document.createElement('section'); el.className = 'sec'; el.id = 's-' + id; el.hidden = true; main.appendChild(el); }
     if (!rendered[id]) {
-      el.innerHTML = SECTIONS[id][0]() + `<footer class="foot"><span>자료: 인수인계_2026-10-25.md, reports\\게이미피케이션 선행연구 분석.md, research_notes\\ 1·2차 노트. 숫자는 노트·CSV에서만 가져왔습니다.</span><span>등급 표기: 핵심 근거 = 박사논문 + 교수참여 동료심사 학술지 · 정의 원전 = [기준 외·원전] · 기준 외 = 학술대회·교사/학생 단독·석사 등.</span></footer>`;
+      el.innerHTML = SECTIONS[id][0]() + `<footer class="foot"><span>자료: 2026년 10월 25일까지 정리한 게이미피케이션 선행연구 분석과 연구 노트. 원문의 근거 수준과 확인 필요 표시를 유지했습니다.</span><span>등급 표기: 핵심 근거 = 박사논문 + 교수참여 동료심사 학술지 · 정의 원전 = [기준 외·원전] · 기준 외 = 학술대회·교사/학생 단독·석사 등.</span></footer>`;
       const a = document.querySelector(`#rail a[href="#${id}"]`);
       const eb = el.querySelector('.sec-head .eyebrow');
       if (a && eb) { const grp = a.closest('.rgroup'); eb.textContent = (grp ? grp.dataset.group + ' · ' : '') + a.querySelector('span:last-child').textContent; }

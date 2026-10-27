@@ -14,6 +14,7 @@ head += '''
 '''
 body = '<div class="wrap">' + body
 body = body.replace('<main>', '<main id="main-content">', 1)
+body = body.replace('<main id="main-content">', '<main id="main-content">\n<aside class="callout"><strong>한국어로 차근차근 공부하기</strong><p>쉬운 설명과 한국어 논문 원문, 읽을 순서를 모았습니다. <a href="./korean-study.html">한국어 논문·공부방으로 이동 →</a></p></aside>', 1)
 body = body.replace('https://cdnjs.cloudflare.com/ajax/libs/marked/4.3.0/marked.min.js', './assets/marked-4.3.0.min.js')
 masthead = '''
 <a class="skip-link" href="#main-content">본문으로 건너뛰기</a>
@@ -21,6 +22,7 @@ masthead = '''
   <a class="lab-title" href="./index.html"><span aria-hidden="true">✦</span> 호모 루덴스</a>
   <nav aria-label="연구실 메뉴">
     <a href="./index.html">홈</a>
+    <a href="./korean-study.html">한국어 공부방</a>
     <a href="./lesson-2026-10-27.html">오늘의 학습</a>
     <a href="./research.html" aria-current="page">연구 노트</a>
     <a href="./dashboard.html">학습실</a>
@@ -29,7 +31,7 @@ masthead = '''
 '''
 bridge = '''
 <aside class="study-bridge" aria-labelledby="study-bridge-title">
-  <div class="study-bridge-kicker">RESEARCH × PRACTICE</div>
+  <div class="study-bridge-kicker">연구와 수업 실천</div>
   <h2 id="study-bridge-title">연구의 맥락에서, 근거를 읽고 설계하는 단계로.</h2>
   <p>이 노트에서 AI 보드게임 연구의 방향을 잡고, 통합한 학습실에서 선행연구를 탐색하고 학습 기록과 설계 초안을 이어 가세요.</p>
   <div class="study-shortcuts">
