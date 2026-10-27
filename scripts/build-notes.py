@@ -23,6 +23,7 @@ masthead = '''
   <nav aria-label="연구실 메뉴">
     <a href="./index.html">홈</a>
     <a href="./learning-model.html">수업모형 만들기</a>
+    <a href="./game-design.html">우리 게임 설계</a>
     <a href="./korean-study.html">한국어 공부방</a>
     <a href="./lesson-2026-10-27.html">오늘의 학습</a>
     <a href="./research.html" aria-current="page">연구 노트</a>
