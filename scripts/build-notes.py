@@ -15,6 +15,7 @@ head += '''
 body = '<div class="wrap">' + body
 body = body.replace('<main>', '<main id="main-content">', 1)
 body = body.replace('<main id="main-content">', '<main id="main-content">\n<aside class="callout"><strong>한국어로 차근차근 공부하기</strong><p>쉬운 설명과 한국어 논문 원문, 읽을 순서를 모았습니다. <a href="./korean-study.html">한국어 논문·공부방으로 이동 →</a></p></aside>', 1)
+body = body.replace('<main id="main-content">', '<main id="main-content">\n' + '<aside class="callout"><strong>이 노트에서 이어진 최신 수업 설계</strong><p>아래는 10월에 통합한 연구 노트입니다. 이후의 공동주체성·부기 이야기 섬·수업 장면별 설계 논의를 <a href="./co-learning-model.html#lineage">11월 통합 수업모형에 연결했습니다</a>. <a href="./lesson-designs.html">다섯 가지 수업 디자인 보기 →</a></p></aside>', 1)
 body = body.replace('https://cdnjs.cloudflare.com/ajax/libs/marked/4.3.0/marked.min.js', './assets/marked-4.3.0.min.js')
 masthead = '''
 <a class="skip-link" href="#main-content">본문으로 건너뛰기</a>
@@ -22,7 +23,7 @@ masthead = '''
   <a class="lab-title" href="./index.html"><span aria-hidden="true">✦</span> 호모 루덴스</a>
   <nav aria-label="연구실 메뉴">
     <a href="./index.html">홈</a>
-    <a href="./learning-model.html">수업모형 만들기</a>
+    <a href="./co-learning-model.html">수업모형 만들기</a>
     <a href="./game-design.html">우리 게임 설계</a>
     <a href="./korean-study.html">한국어 공부방</a>
     <a href="./lesson-2026-10-27.html">오늘의 학습</a>
