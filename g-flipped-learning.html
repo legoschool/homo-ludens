@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="G-Flipped Learning: 수업 전 게임 학습의 증거로 개인화와 파티 편성을 준비하고, 협업 레이드와 현실 문제 해결로 이어지는 호모 루덴스 수업모형 설계안.">
+<title>G-Flipped Learning · 호모 루덴스</title>
+<link rel="stylesheet" href="./assets/lab.css">
+<link rel="stylesheet" href="./assets/teaching-models.css">
+<style>
+.gf-world{background:var(--teal);color:#fff;padding:28px;border-radius:14px;margin:24px 0}.gf-world h2,.gf-world h3{color:#fff}.gf-world .tm-kicker{color:#f1d292}.gf-world p{max-width:940px}.gf-world .gf-panels{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:22px}.gf-world .gf-panels>div{border:1px solid #ffffff50;border-radius:9px;padding:18px}.gf-world .gf-panels h3{font-size:18px;margin:0 0 10px}.gf-world .gf-panels p{font-size:14px;margin:0}.gf-loop{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:12px;padding:0;list-style:none;counter-reset:stage}.gf-loop li{counter-increment:stage;background:var(--paper);border:1px solid var(--line);border-top:4px solid var(--teal);border-radius:9px;padding:21px}.gf-loop li:before{content:counter(stage,decimal-leading-zero);font-weight:700;font-size:12px;color:#85601a}.gf-loop h3{font-size:19px;color:var(--teal);margin:8px 0}.gf-loop p{font-size:14px;margin:9px 0}.gf-loop strong{color:var(--teal)}.gf-badge{border:2px solid var(--teal);border-radius:12px;background:#fff;padding:24px}.gf-badge h3{margin-top:0;color:var(--teal)}.gf-badge dl{display:grid;grid-template-columns:105px 1fr;gap:10px;margin:0}.gf-badge dt{font-weight:700;color:var(--teal);font-size:13px}.gf-badge dd{margin:0;font-size:14px}.gf-status{display:inline-block;background:var(--tint);border-radius:5px;padding:3px 8px;color:var(--teal);font-size:12px;font-weight:600}.gf-small-table table{min-width:740px}.gf-source-list li{margin:14px 0;font-size:14px}.gf-source-list span{display:block;color:var(--muted);font-size:13px}.gf-rule{font-size:clamp(19px,2vw,25px);font-weight:600;line-height:1.7;color:var(--teal)}.gf-action-list li{margin:12px 0}.gf-section-links{display:flex;flex-wrap:wrap;gap:8px}.gf-section-links a{background:var(--tint);padding:6px 10px;border-radius:6px;text-decoration:none;font-size:13px}@media(max-width:750px){.gf-world{padding:22px}.gf-world .gf-panels{grid-template-columns:1fr}.gf-badge dl{grid-template-columns:1fr;gap:4px}.gf-badge dd{margin-bottom:10px}}@media print{.gf-world{background:#fff;color:#000;border:2px solid var(--teal)}.gf-world h2,.gf-world h3{color:#000}.gf-world .gf-panels>div{border-color:#bbb}.gf-loop{grid-template-columns:repeat(2,minmax(0,1fr))}.gf-badge,.gf-loop li{break-inside:avoid}}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
+<div class="shell">
+<header class="masthead">
+<a class="brand" href="./index.html"><span class="brand-mark" aria-hidden="true">✦</span>호모 루덴스</a>
+<nav class="site-nav" aria-label="주 메뉴"><a href="./index.html">홈</a><a href="./teaching-foundations.html">수업모형 기초</a><a href="./g-flipped-learning.html" aria-current="page">G-Flipped Learning</a><a href="./science-g-flipped.html">과학 수업 적용</a><a href="./teaching-models.html">모형 비교</a><a href="./course-materials.html">수업 자료실</a><a href="./korean-study.html">한국어 공부방</a></nav>
+</header>
+<main id="main">
+<header class="tm-hero">
+<p class="tm-kicker">호모 루덴스의 중심 수업모형 · 공동 개발 설계안 0.1</p>
+<h1>G-Flipped Learning</h1>
+<p class="tm-lede"><strong>게임으로 먼저 배우고 나를 알아간다.<br>파티로 도전하고, 학급 레이드로 현실의 문제를 해결한다.</strong></p>
+<p>우리가 구상하는 것은 이야기·캐릭터·개인 성장·파티 사냥·학급 레이드가 이어지는 <strong>협업형 다중접속 역할수행게임의 학습 버전</strong>입니다. 먼저 게임 속에서 배운 과정과 도움 기록을 모으고, 그 증거를 바탕으로 교사가 파티와 개인·팀 미션을 설계합니다. 수업에서는 서로 다른 배움과 기여를 합쳐 공동 목표를 달성합니다.</p>
+<div class="tm-callout"><strong>뒤집힌 수업의 핵심: 사전 학습의 증거가 다음 수업을 바꾼다.</strong><p>같은 수업을 하기 전에 영상만 보는 구조가 아닙니다. 사전 게임학습인 <strong>G과정</strong>에서 드러난 이해·오류·지원 반응이 수업 중 과제, 파티 구성, 교사 지원과 다음 도전을 바꿉니다.</p></div>
+<nav class="tm-nav" aria-label="모형 안의 바로가기"><a href="#world">게임 세계 한눈에</a><a href="#cycle">사전학습부터 레이드까지</a><a href="#badges">진단 뱃지와 개인화</a><a href="#party">파티와 학습 기여</a><a href="#example">학교 쉼터 수업 예시</a><a href="#assessment">평가와 검증</a><a href="#foundation">모형의 기초 조건</a></nav>
+<p class="tm-note">2026년 11월 24일 · 사용자의 구상과 강의자료를 연결한 자체 설계 청사진입니다. 새로운 모형의 효과를 검증한 결과나 접속 가능한 완성 게임은 아닙니다. 실제 게임 서버·자동 진단·인공지능 연동은 구현 전이며, 아래 뱃지와 미션은 설계 예시입니다.</p>
+<div class="tm-footer"><a href="./science-g-flipped.html">우리 과학 수업에 적용하기·발표 준비 →</a></div>
+</header>
+
+<section class="tm-section" id="world" aria-labelledby="world-title">
+<p class="tm-kicker">하나의 세계 안에 연결되는 배움</p><h2 id="world-title">내 성장과 우리 파티의 성장이 같은 목표를 향하게</h2>
+<div class="gf-world"><p class="tm-kicker">이야기와 로비 화면의 설계 예시</p><h3>그늘 숲 복구 원정대</h3><p>마을의 쉼터가 모두에게 편안한 공간이 되려면 흩어진 단서를 모으고, 서로 다른 필요를 듣고, 공간을 설계해 시험해야 합니다. 이야기 속 ‘막힌 길’은 현실의 학교 쉼터 문제와 연결됩니다. 최종 보스는 학생이나 다른 파티가 아니라 <strong>근거 없는 추측·엇갈린 필요·검증되지 않은 설계</strong>라는 공동 과제입니다.</p><div class="gf-panels"><div><h3>내 캐릭터</h3><p>역량별 뱃지, 내가 해낸 증거, 현재 필요한 도움, 다음 도전. 성장은 잘하게 된 행동으로 보입니다.</p></div><div><h3>우리 파티</h3><p>함께 해결할 미션, 각자의 개인 미션, 역할과 약속. 서로의 정보·설명·시험 결과가 필요합니다.</p></div><div><h3>학급 레이드</h3><p>여러 파티의 대안을 검토해 공동 설계를 만들고 현실에서 확인합니다. 검증된 학습 기여가 관문을 엽니다.</p></div></div></div>
+<p>로비에서 준비 상태를 확인하고, 퀘스트에 들어가고, 배운 것을 가지고 귀환합니다. 이야기와 보상은 활동에 의미와 방향을 주고, 실제 학습은 <strong>설명·근거 확인·협의·시험·수정</strong>에서 일어나도록 설계합니다.</p>
+<div class="tm-shared"><article><h3>함께 도달할 목표</h3><p>개념을 써서 현실 문제를 해결합니다. 사람의 필요를 이해하고 근거로 판단하며 선택의 결과를 책임집니다.</p></article><article><h3>각자 다른 출발점</h3><p>어떤 역량을 혼자 수행하고 어떤 도움을 받으면 가능한지 구별합니다. 시작점이 달라도 의미 있는 기여를 맡습니다.</p></article><article><h3>실패 뒤에 열리는 길</h3><p>막히면 지원 퀘스트·개념 설명·다른 시험으로 돌아갑니다. 재도전은 학습의 일부이며, 한 학생의 어려움 때문에 학급 보상을 박탈하지 않습니다.</p></article></div>
+</section>
+
+<section class="tm-section" id="cycle" aria-labelledby="cycle-title">
+<p class="tm-kicker">사전 게임학습 → 수업의 개인화 → 공동 해결 → 다음 성장</p><h2 id="cycle-title">일곱 장면을 잇되, 관문과 되돌아갈 길을 설계한다</h2>
+<ol class="gf-loop">
+<li><h3>수업 전 G과정</h3><p>짧은 이야기와 튜토리얼에서 개념을 접하고, 처음 수행 → 도움 선택 → 재시도 → 조건이 바뀐 짧은 과제를 경험합니다.</p><p><strong>남길 것</strong> 답·설명·쓴 자료·도움 종류·재시도 변화. 접속 시간과 클릭 수만으로 이해를 추정하지 않습니다.</p></li>
+<li><h3>진단 뱃지의 근거 모으기</h3><p>역량별 수행 증거를 묶어 ‘혼자 설명함’, ‘그림 단서를 받아 적용함’, ‘다시 확인할 부분’처럼 상태를 드러냅니다.</p><p><strong>관문</strong> 증거가 부족하면 ‘확인 필요’로 남기고 짧은 추가 문답을 합니다.</p></li>
+<li><h3>교사가 개인화 설계</h3><p>오류와 지원 반응, 학생 선택을 함께 보고 프로필을 검토합니다. 개인 미션·공통 팀 미션·역할·지원 자료를 조합합니다.</p><p><strong>관문</strong> 배울 목표와 개인이 직접 할 사고가 분명해야 파티에 배정합니다.</p></li>
+<li><h3>파티 사냥과 학급 레이드</h3><p>파티에서 탐구·연습·설명을 하고 다른 파티와 교차 검토합니다. 서로 다른 기여를 연결해 학급의 공동 해결안을 만듭니다.</p><p><strong>되돌아가기</strong> 근거가 약하면 조사, 개념이 흔들리면 지원, 결과가 다르면 재설계 퀘스트로 돌아갑니다.</p></li>
+<li><h3>현실에서 실행·검증</h3><p>작은 시제품이나 허용된 현장 시험으로 사용자 반응과 결과를 확인합니다. 예상과 실제의 차이를 기록합니다.</p><p><strong>관문</strong> 제안서를 냈다는 사실과 실제로 시험했다는 사실을 구분합니다.</p></li>
+<li><h3>귀환 성찰·개별 전이</h3><p>파티의 결정과 내 이해가 바뀐 이유를 설명합니다. 도움 없이 바뀐 조건에 적용해 개인의 성취를 확인합니다.</p><p><strong>관문</strong> 팀이 이겼어도 개인 이해는 따로 확인하고 필요한 보충을 제공합니다.</p></li>
+<li><h3>뱃지 갱신·다음 G과정</h3><p>새로운 증거와 도움 조건으로 프로필을 갱신합니다. 학생과 다음 도전을 선택하고 파티·역할도 다시 조정합니다.</p><p><strong>다음 순환</strong> 한 번 받은 등급에 고정하지 않고 새로운 학습의 출발점으로 삼습니다.</p></li>
+</ol>
+<div class="tm-callout"><strong>게임의 진행과 배움의 진행을 함께 보되 구별합니다.</strong><p>학급은 공동 과제를 이어가고, 개별 학생은 필요한 보충 퀘스트를 병행할 수 있습니다. 쉬운 과제를 반복해 점수만 모으는 구조를 피하기 위해 같은 증거의 반복 제출은 새 관문 기여로 인정하지 않고, 다음에는 설명·새 조건·줄어든 도움으로 도전을 바꿉니다.</p></div>
+<p class="tm-note">선수학습과 지원 반응을 확인하고 도움을 줄이는 원리는 교수 자료 17–18쪽을 참고했습니다. 위 게임 순환과 관문은 우리가 제안한 구조입니다. <a href="#sources">근거 자료와 자체 설계 구분 보기</a></p>
+</section>
+
+<section class="tm-section" id="badges" aria-labelledby="badge-title">
+<p class="tm-kicker">보상이면서, 다음 수업을 위한 증거 묶음</p><h2 id="badge-title">뱃지는 학생의 고정 등급이 아니라 현재의 배움 기록</h2>
+<p>한 사람에게 하나의 능력 점수를 붙이지 않습니다. 자료 해석·공간 추론·근거 설명·협력 검증처럼 이번 목표에 맞는 역량을 나누고, 뱃지마다 <strong>무엇을 어떤 조건에서 했는지</strong>를 남깁니다. 뱃지 획득은 성장의 인정이지만, 진단적 의미는 연결된 수행 증거와 교사의 확인에서 나옵니다.</p>
+<div class="tm-compare"><article class="gf-badge"><span class="gf-status">가상 학생의 뱃지 예시 · 교사 확인 완료</span><h3>공간 탐험가 · 넓이 설명</h3><dl><dt>역량</dt><dd>직사각형 넓이를 구하고 배치의 여유 공간을 설명하기</dd><dt>실제 수행 증거</dt><dd>가상 도면에서 격자를 세어 넓이를 구한 풀이와 자기 말 설명</dd><dt>도움 조건</dt><dd>첫 과제는 격자 그림 사용, 바뀐 직사각형 과제는 그림 없이 수행</dd><dt>확인 시점</dt><dd>이번 단원 사전 G과정 뒤 교사 문답</dd><dt>다음 도전</dt><dd>넓이가 같아도 통행 경험이 달라지는 두 배치를 비교하기</dd></dl></article><article class="tm-output"><h3>이 뱃지가 바꾸는 수업</h3><dl><dt>개인 미션</dt><dd>파티의 두 배치안을 비교하고 면적만으로 결정할 수 없는 이유를 설명합니다.</dd><dt>팀 미션</dt><dd>이용자 요구와 공간 자료를 합쳐 모두가 이용할 수 있는 쉼터안을 만듭니다.</dd><dt>제공할 지원</dt><dd>복잡한 도면에는 격자를 선택할 수 있게 하되, 마지막 개인 과제에서는 지원을 줄여 확인합니다.</dd><dt>갱신 조건</dt><dd>새 수행과 도움 조건을 덧붙입니다. 이전의 어려움을 현재의 고정 꼬리표로 남기지 않습니다.</dd></dl></article></div>
+<details class="tm-chooser"><summary><strong>진단을 잘못했거나 사전학습에 참여하지 못했다면</strong></summary><ul class="gf-action-list"><li><strong>증거가 서로 다름:</strong> 게임 답과 구두 설명이 다르면 짧은 새 과제로 다시 확인합니다. 인공지능의 추정을 확정 진단으로 사용하지 않습니다.</li><li><strong>사전학습 미참여:</strong> 학교 안에서 같은 이야기·자료·과제로 준비할 시간을 제공합니다. 참여 여부로 능력을 낮게 판정하거나 파티에서 제외하지 않습니다.</li><li><strong>접근 조건이 다름:</strong> 음성·그림·큰 글씨·종이 자료와 말로 설명하는 경로를 마련합니다. 목표 개념과 증거 기준은 유지합니다.</li><li><strong>공개 범위:</strong> 학급 화면에는 학생이 공유하기로 한 기여와 공동 진행을 보여 줍니다. 상세 오류·지원 기록은 교사와 해당 학생이 확인합니다.</li></ul></details>
+</section>
+
+<section class="tm-section" id="party" aria-labelledby="party-title">
+<p class="tm-kicker">개인화에 따른 편성 · 개인 미션과 팀 미션의 결합</p><h2 id="party-title">서로 다른 역할이 있어야 공동 공격이 완성된다</h2>
+<p>초기 운영 예시는 4명 파티입니다. 교사는 역량별 증거, 도움 필요, 관심과 협력 관계를 검토해 <strong>강점이 상호 보완되되 모두가 핵심 개념을 배울 수 있는 구성</strong>을 만듭니다. 성적순 고정 편성이나 ‘잘하는 학생이 대신 해결하는 팀’을 피하고, 중간 점검에서 역할을 순환합니다.</p>
+<div class="tm-matrix gf-small-table" role="region" aria-label="파티 역할과 개인·공동 미션" tabindex="0"><table><caption>모든 역할이 설명·근거 확인에 참여합니다. 역할은 능력 등급이 아니라 이번 활동의 책임입니다.</caption><thead><tr><th scope="col">이번 역할</th><th scope="col">개인 미션 예시</th><th scope="col">팀에 연결되는 기여</th><th scope="col">다음 사람의 확인</th></tr></thead><tbody>
+<tr><th scope="row">단서 탐색자</th><td>이용자 요구 카드에서 사실과 추측을 나누고 근거를 표시한다.</td><td>어떤 필요를 해결해야 하는지 근거를 제공한다.</td><td>설계자가 그 근거가 배치에 어떻게 반영됐는지 설명한다.</td></tr>
+<tr><th scope="row">공간 설계자</th><td>도면의 넓이와 배치를 계산·표현한다. 필요하면 격자 단서를 고른다.</td><td>조건을 만족하는 대안과 예상 결과를 제안한다.</td><td>검증자가 계산과 실제 모형의 관계를 확인한다.</td></tr>
+<tr><th scope="row">관점 연결자</th><td>서로 다른 이용자 입장을 되말하고 선택 기준을 만든다.</td><td>한 집단의 편의만 반영하지 않도록 절충 이유를 설명한다.</td><td>탐색자가 이용자 자료와 설명이 맞는지 대조한다.</td></tr>
+<tr><th scope="row">시험 검증자</th><td>예상·시험 조건·관찰 결과를 구분하고 수정이 필요한 곳을 찾는다.</td><td>설계가 실제로 작동하는지 검토할 증거를 만든다.</td><td>설계자가 시험 결과를 받아 수정 이유를 설명한다.</td></tr>
+</tbody></table></div>
+<div class="tm-callout"><strong>출발 수준이 낮아도 팀에 필요한 기여를 할 수 있어야 합니다.</strong><p>복잡한 표가 어려운 학생은 핵심 자료를 표시한 카드에서 근거를 찾고 자기 말로 설명할 수 있습니다. 같은 일을 계속 쉽게 반복시키기보다 다음에는 표시를 줄이고 새 자료를 읽도록 합니다. 기록 담당으로만 고정하지 않고 설계·질문·검증·설명을 경험하게 합니다.</p></div>
+<p><strong>편성 절차:</strong> 교사가 사전 증거를 검토 → 학생이 관심·도움 필요를 표현 → 공통 목표와 개인 미션 제시 → 역할을 협의 → 첫 미션 뒤 개인 설명을 확인 → 역할·지원·편성을 조정합니다. 파티의 좋은 성과가 개인 미션의 완료를 자동으로 대신하지 않습니다.</p>
+</section>
+
+<section class="tm-section" id="contribution" aria-labelledby="contribution-title">
+<p class="tm-kicker">학습을 통해 넣는 딜을 어떻게 판단할 것인가</p><h2 id="contribution-title">검증된 배움이 공동 보스의 방어막을 낮춘다</h2>
+<p class="gf-rule">근거 있는 설명 + 동료의 확인 + 시험이나 적용의 증거<br>→ 인정할 학습 기여 → 파티 연계 → 공동 관문 진척</p>
+<p>게임에서는 이 기여를 공격·회복·보호·길 열기로 표현할 수 있습니다. ‘딜’은 빠른 정답의 개수에만 연결하지 않고, <strong>공동 해결을 진전시킨 학습 행동</strong>에 연결합니다. 다음은 수업 운영을 위한 제안 규칙이며, 검증된 채점 도구는 아닙니다.</p>
+<div class="tm-shared"><article><h3>근거 공격</h3><p>출처와 자료를 대조해 잘못된 가정을 바로잡습니다. 자료를 복사한 것만으로 인정하지 않고 왜 판단이 달라지는지 설명합니다.</p></article><article><h3>설명 연결</h3><p>다른 역할의 정보를 교과 개념과 연결합니다. 설명을 들은 동료가 새 예로 적용하거나 질문에 답해 이해를 확인합니다.</p></article><article><h3>검증 공격</h3><p>예상과 다른 시험 결과를 찾아 수정합니다. 좋은 결과만 인정하지 않고 실패를 해석해 바꾼 판단도 기여로 봅니다.</p></article><article><h3>협력 보호·회복</h3><p>조용한 구성원의 근거를 반영하거나 막힌 동료에게 필요한 도움을 제공합니다. 도움 받은 학생의 실제 수행을 함께 확인합니다.</p></article></div>
+<div class="tm-example"><h3>딜과 성장이 화면에 나타나는 방식</h3><p><span class="gf-status">가상 게임 규칙 · 시범 운영에서 조정할 수치</span></p><p>예를 들어 공동 보스의 체력을 <strong>1,200</strong>으로 시작합니다. 한 파티가 검토받은 관찰 근거로 <strong>100</strong>, 개념을 사용한 설명으로 <strong>100</strong>, 시험과 수정 증거로 <strong>100</strong>의 딜을 넣습니다. 세 증거를 하나의 해결안으로 연결하고 동료가 설명하면 <strong>합동 기술 100</strong>이 더해져, 파티의 연계 공격 <strong>400</strong>이 공동 체력을 줄입니다. 공격 수치·이펙트·열린 구역이 함께 변해 학급의 진전이 보입니다.</p><p>수치가 채워져도 관문별 필수 증거를 확인해야 다음 구역이 열립니다. 같은 증거의 재제출로 딜을 무한히 쌓을 수는 없지만, 보충 연습과 도움 받은 재수행은 개인 성장 기록에 남습니다. 학생마다 자신의 현재 목표에 맞는 도전으로 핵심 기여를 만들고, 다음에는 도움을 줄이거나 조건을 바꾸어 성장합니다.</p><p>캐릭터는 관찰·설명·검증·협력 기술을 익히며 성장합니다. 협력 역할의 보호·회복 기술은 동료의 재도전 기회를 만들고, 그 동료의 실제 수행까지 확인합니다. 역할과 기술은 순환할 수 있으며, <strong>뱃지의 진단 기록·게임 경험치·교과 성취 기록은 각각 구분</strong>합니다.</p><p class="tm-note">위 숫자는 재미와 진행 속도를 검토하기 위한 설계 예시입니다. 실제 학습 효과나 성적 배점을 나타내지 않으며, 현재 페이지에는 딜 계산이나 다중접속 게임이 구현되어 있지 않습니다.</p></div>
+<div class="tm-matrix gf-small-table" role="region" aria-label="레이드 관문 판정 규칙" tabindex="0"><table><caption>딜의 누적과 함께 서로 다른 학습 증거의 연결을 확인하는 관문</caption><thead><tr><th scope="col">공동 방어막</th><th scope="col">열리는 조건</th><th scope="col">미충족 시 다음 행동</th></tr></thead><tbody>
+<tr><th scope="row">문제 이해</th><td>확인한 이용자 요구와 공간 자료로 문제를 설명하고 모르는 점을 표시한다.</td><td>추측을 확인하는 조사·자료 읽기 퀘스트</td></tr>
+<tr><th scope="row">해결안의 근거</th><td>서로 다른 대안을 비교하고 교과 개념과 공동 기준으로 선택 이유를 설명한다.</td><td>반론 검토·개념 설명·역할 협상 퀘스트</td></tr>
+<tr><th scope="row">시험과 개선</th><td>예상·실제 결과를 비교하고 수정 전후와 이유를 남긴다.</td><td>시험 조건 점검·한 요소 수정·재시험 퀘스트</td></tr>
+<tr><th scope="row">공유와 책임</th><td>활용 조건과 남은 한계를 공개하고 각자의 판단·기여를 설명한다.</td><td>빠진 관점 확인·개인 설명·성찰 퀘스트</td></tr>
+</tbody></table></div>
+<p>기여 기록은 <strong>학생 제출 → 동료 질문·확인 → 교사의 핵심 증거 확인 → 공동판 반영</strong> 순서로 처리합니다. 인공지능은 기록을 정리하거나 빠진 근거를 질문할 수 있지만 기여 인정·성적·자동 진급을 단독 결정하지 않습니다. 반복 제출이나 인공지능 답 복사에는 새 기여를 부여하지 않고, 학생 자신의 설명과 적용을 요청합니다.</p>
+<p class="tm-note">게임 진행 수치와 교과 성적은 동일하지 않습니다. 협력 지원은 게임 안에서 인정하되 개념 성취는 별도 개인 과제로 확인합니다. 실패 횟수·힌트 사용량·속도를 능력 점수로 바꾸지 않습니다.</p>
+</section>
+
+<section class="tm-section" id="example" aria-labelledby="example-title">
+<p class="tm-kicker">하나의 전체 수업으로 구체화</p><h2 id="example-title">학교 쉼터를 되살리는 학급 레이드</h2>
+<p><span class="gf-status">설계용 가상 사례</span> 초등 고학년 24명·6개 파티·40분씩 6차시를 가정합니다. 아래 공간·자료·학생 상태는 실제 조사 결과가 아닙니다. 실제 학교에 적용할 때 학년 성취기준, 공간 이용 조건과 학생의 준비도를 먼저 확인합니다.</p>
+<div class="tm-example"><h3>공통 목표와 이야기</h3><p>그늘 숲의 쉼터는 넓이가 충분해 보여도 어떤 사람에게는 불편합니다. 학급은 <strong>서로 다른 이용자의 필요를 자료로 이해하고, 넓이와 배치의 관계를 설명하며, 시험 결과로 쉼터안을 개선</strong>해야 합니다.</p><p>연습 자료는 가로 6m·세로 4m인 가상 공간 도면, 조용히 쉬기·대화하기·이동하기의 서로 다른 요구 카드, 자원 토큰 10개입니다. 실제 공간의 통행 조건과 시설 기준을 대신하는 자료가 아닙니다.</p></div>
+<div class="tm-matrix" role="region" aria-label="학교 쉼터 수업 운영 예시" tabindex="0"><table><caption>시간은 첫 운영의 가정입니다. G과정 미참여 학생에게 같은 내용의 학교 내 준비 시간을 제공합니다.</caption><thead><tr><th scope="col">언제</th><th scope="col">학생의 게임·학습 활동</th><th scope="col">교사의 판단과 다음 조치</th><th scope="col">남길 증거</th></tr></thead><tbody>
+<tr><th scope="row">수업 전 G과정<br>15–20분 예시</th><td>이야기 튜토리얼, 요구 카드 읽기, 넓이 설명, 도움 뒤 재시도, 짧은 새 과제</td><td>읽기·공간 추론·설명 상태를 검토한다. 접속 여부 대신 수행을 확인한다.</td><td>첫 수행·도움 조건·재수행·새 과제</td></tr>
+<tr><th scope="row">1차시<br>로비·파티 준비</th><td>목표·기여 규칙 확인, 개인 미션과 역할 협의, 이용자에게 확인할 질문 만들기</td><td>공통 오류는 짧게 설명하고 학생별 도움을 조정한다. 준비 미완료 학생의 보충 경로를 연결한다.</td><td>교사 확인 프로필·파티 계획·개인 목표</td></tr>
+<tr><th scope="row">2차시<br>파티 탐구</th><td>허용된 범위에서 실제 학교의 요구·공간 자료를 확인하고 문제를 정의한다.</td><td>자료가 없으면 가상 탐구로 표시한다. 관찰 사실과 추측을 나누게 한다.</td><td>자료 출처·관찰 기록·문제정의서</td></tr>
+<tr><th scope="row">3차시<br>파티 사냥</th><td>두 배치안을 만들고 넓이·이용자 기준으로 비교한다. 역할을 바꿔 서로 설명한다.</td><td>계산·개념·협력 중 막힌 지점을 구별해 지원하고, 익숙해지면 도움을 줄인다.</td><td>대안·계산·선택 이유·개인 설명</td></tr>
+<tr><th scope="row">4차시<br>학급 레이드</th><td>다른 파티가 반론과 시험 질문을 제시한다. 공동 기준으로 학급의 실행안을 합의한다.</td><td>인기투표로만 결정하지 않게 근거를 요청한다. 소수 의견과 아직 해결하지 못한 조건을 남긴다.</td><td>교차 검토·수정된 공동안·남은 이견</td></tr>
+<tr><th scope="row">5차시<br>현실 시험</th><td>승인된 공간에서 임시 표시·모형 등으로 작은 시험을 하고 사용자의 반응을 확인한다.</td><td>이용 안전·동의를 확인하고 실제 시설 변경은 별도 승인 대상으로 둔다. 시험 결과에 따라 다시 설계하게 한다.</td><td>시험 조건·관찰·반응·수정 전후</td></tr>
+<tr><th scope="row">6차시<br>귀환·새 도전</th><td>공동 결과와 한계를 공유하고, 출입 위치가 바뀐 새 도면을 각자 설명한다.</td><td>독립 이해를 확인해 뱃지를 갱신한다. 보충·확장 과제와 다음 G과정을 정한다.</td><td>개인 전이 과제·성찰·갱신 근거</td></tr>
+</tbody></table></div>
+<div class="tm-callout"><strong>한 파티의 연계 기여 예시</strong><p>탐색자가 ‘대화 소리가 불편하다’는 실제 의견을 확인 → 설계자가 공간을 나눈 두 대안을 제시 → 관점 연결자가 대화와 휴식 양쪽의 기준을 조정 → 검증자가 시험에서 여전히 불편한 지점을 찾아 수정합니다. 네 사람의 기여가 연결될 때 ‘시험과 개선’ 관문이 열립니다. 한 사람이 답을 여러 개 맞히는 것만으로 대체되지 않습니다.</p></div>
+<p>현장 시험이 허용되지 않으면 모형·역할 시뮬레이션으로 같은 개념을 학습할 수 있습니다. 이 경우 결과는 <strong>모의 조건에서의 검토</strong>로 표시하고 실제 학교 문제를 해결했다고 보고하지 않습니다.</p>
+</section>
+
+<section class="tm-section" id="quest-models" aria-labelledby="quest-title">
+<p class="tm-kicker">앞서 만든 다섯 모형을 세계 안의 학습 구조로</p><h2 id="quest-title">전체 게임은 하나, 퀘스트의 배움 방식은 여러 가지</h2>
+<p>다섯 설계안은 서로 다른 교과로 바꾼 예시가 아니라, 게임 안에서 필요에 따라 조합할 <strong>반복 활동과 평가 방식</strong>입니다. 한 번의 퀘스트에 전부 넣지 않고 목표에 맞는 구조를 선택합니다.</p>
+<div class="tm-cards"><article class="tm-card" data-model="adaptive"><h3>도전 조절형</h3><p>G과정과 지원 퀘스트에서 혼자 수행 → 도움 → 재수행 → 도움을 줄인 새 과제를 운영합니다.</p><a href="./teaching-models.html#adaptive">지원 반응과 독립 수행 보기 →</a></article><article class="tm-card" data-model="argument"><h3>증거 논증형</h3><p>탐구와 레이드에서 주장 → 근거 → 반론 → 수정으로 잘못된 가정을 해제합니다.</p><a href="./teaching-models.html#argument">근거와 판단 변화 평가 →</a></article><article class="tm-card" data-model="redesign"><h3>실패·재설계형</h3><p>시제품 → 시험 → 원인 설명 → 수정·재시험으로 관문을 엽니다.</p><a href="./teaching-models.html#redesign">시험과 개선 기록 평가 →</a></article><article class="tm-card" data-model="negotiation"><h3>역할 협상형</h3><p>서로 다른 이용자의 정보와 필요를 교환하고, 공동 기준으로 해결안을 합의합니다.</p><a href="./teaching-models.html#negotiation">관점과 절충 근거 평가 →</a></article><article class="tm-card" data-model="teach"><h3>가르치며 성장형</h3><p>파티 준비와 귀환에서 동료나 배우는 역할의 오해를 진단하고, 설명을 고쳐 이해를 확인합니다.</p><a href="./teaching-models.html#teach">설명과 오류 진단 평가 →</a></article></div>
+</section>
+
+<section class="tm-section" id="assessment" aria-labelledby="assessment-title">
+<p class="tm-kicker">게임 성과·개인 성취·협력·현실의 변화를 구분</p><h2 id="assessment-title">보스를 이긴 기록만으로 배움을 판단하지 않는다</h2>
+<div class="tm-matrix" role="region" aria-label="학습목표·활동·평가 정렬" tabindex="0"><table><caption>학교 쉼터 예시의 목표–활동–평가 연결. 성적 반영은 학교 평가 계획에 맞게 별도 설계합니다.</caption><thead><tr><th scope="col">목표</th><th scope="col">목표를 쓰는 활동</th><th scope="col">확인할 증거와 판단 기준</th><th scope="col">평가 뒤 조치</th></tr></thead><tbody>
+<tr><th scope="row">개념 이해·개별 전이</th><td>넓이 계산, 배치 비교, 바뀐 도면 설명</td><td>개인이 개념을 정확히 쓰고 조건이 바뀌어도 이유를 설명하는가</td><td>오류에 맞는 재설명·지원 조정·새 과제 확인</td></tr>
+<tr><th scope="row">근거 기반 판단</th><td>자료 대조, 대안 비교, 반론에 응답</td><td>출처와 자료가 주장에 맞는가, 판단을 바꾸거나 유지한 이유가 타당한가</td><td>빠진 자료·반례를 찾아 다시 판단</td></tr>
+<tr><th scope="row">협력과 책임</th><td>역할 교환, 동료 설명 확인, 공동 합의</td><td>실제 발언·기록·개인 설명에서 정보 연결·기여·관점 수용이 확인되는가</td><td>역할 재배치·참여 방식 조정·갈등 중재</td></tr>
+<tr><th scope="row">실행·개선</th><td>현장 또는 모형 시험, 결과 비교·수정</td><td>조건과 결과가 기록되었는가, 수정이 결과에 근거하는가, 한계를 밝히는가</td><td>시험 범위·조건을 고쳐 재검증</td></tr>
+<tr><th scope="row">몰입 경험·성장</th><td>도전 선택, 도움 조절, 귀환 성찰</td><td>학생이 느낀 흥미·어려움·선택권과 지원 전후 수행을 별도로 살피는가</td><td>난이도·선택 범위·지원·휴식·활동 시간을 조정</td></tr>
+</tbody></table></div>
+<div class="tm-shared"><article><h3>게임 진행판</h3><p>열린 관문과 기여를 보여 주는 공동 피드백입니다. 숫자나 뱃지 개수를 그대로 교과 성적으로 바꾸지 않습니다.</p></article><article><h3>개인의 학습 기록</h3><p>사전 수행, 받은 도움, 재수행, 도움 없는 새 과제의 증거를 봅니다. 도움을 많이 받았다는 이유로 감점하지 않습니다.</p></article><article><h3>협력의 증거</h3><p>동료 평가에 이유와 장면을 요구하고 교사 관찰·개인 설명과 대조합니다. 친밀도나 말의 양만으로 판단하지 않습니다.</p></article><article><h3>현실의 변화</h3><p>시험 조건·사용자 반응·개선 여부를 확인합니다. 만족감, 과제 완성, 개념 성취와 실제 현장 효과를 구별합니다.</p></article></div>
+<p class="tm-note">7주차 게임 발표자료의 게임 중 판단 관찰·게임 후 새 문제 확인(물리 11쪽), 4주차 발표의 성과 구분(20쪽), 5주차 리빙랩 평가·생산적 실패의 개인 확인(22–23·32장)을 참고한 자체 평가 설계입니다.</p>
+</section>
+
+<section class="tm-section" id="foundation" aria-labelledby="foundation-title">
+<p class="tm-kicker">멋진 게임 아이디어를 수업모형으로 설명하려면</p><h2 id="foundation-title">구조·역할·교사 반응·지원·효과를 함께 갖추기</h2>
+<p>교수 자료가 소개한 다섯 요소로 이 설계안을 점검합니다. 단계만 나열하지 않고 <strong>누가 어떤 판단을 하고, 교사는 언제 무엇을 지원하며, 어떤 배움을 기대하는지</strong>를 설명합니다. 기대 효과는 검증할 가설입니다.</p>
+<div class="tm-matrix gf-small-table" role="region" aria-label="수업모형의 다섯 구성요소" tabindex="0"><table><caption>교수 자료 5쪽의 다섯 요소를 적용한 자체 설계</caption><thead><tr><th scope="col">요소</th><th scope="col">이 모형의 구체적인 설계</th></tr></thead><tbody>
+<tr><th scope="row">구조</th><td>사전 게임학습의 증거 → 교사 검토와 개인화 → 개인·팀 미션 → 협업 레이드 → 현장 검증 → 개별 전이 → 다음 G과정. 관문 미충족 시 필요한 퀘스트로 되돌아간다.</td></tr>
+<tr><th scope="row">사회적 체제</th><td>학생은 선택·설명·협의의 주체, 파티는 상호 검토 공동체, 교사는 교육적 판단과 지원의 책임자다. 역할을 순환하고 개인의 책임과 공동 목표를 함께 둔다.</td></tr>
+<tr><th scope="row">반응 원리</th><td>오류의 원인을 규칙 이해·개념·전략·참여 문제로 나눠 질문한다. 필요한 만큼 지원하고, 이해가 확인되면 지원을 줄인다. 근거 부족·일방적 결정·대리 수행에는 재설명과 참여 재구성을 요청한다.</td></tr>
+<tr><th scope="row">지원 체제</th><td>이야기·튜토리얼·진단 과제·증거 기록·미션 카드·공동 진행판·교사 확인표·접근 가능한 자료·기초 개념 도움·현장 협력과 시험 시간이 필요하다. 디지털 도구 없이도 같은 증거 흐름을 운영한다.</td></tr>
+<tr><th scope="row">수업 효과·부수적 효과</th><td>직접 목표는 교과 개념 이해·근거 있는 문제 해결·새 조건 적용과, 수업목표로 명시한 협업·책임 있는 판단이다. 소속감·도움 요청 태도·재도전 의지처럼 함께 기대하는 변화는 별도로 관찰한다. 직접·부수 효과의 구분은 실제로 무엇을 목표로 가르치는지에 따라 정하며, 활동 만족이나 승리를 성취의 증거로 대신하지 않는다.</td></tr>
+</tbody></table></div>
+<details class="tm-chooser"><summary><strong>전제·구조·기제·정합의 관점에서도 점검하기</strong></summary><div class="tm-shared"><article><h3>전제</h3><p>학생은 출발점과 지원 필요가 다르고 학습하면서 바뀝니다. 지식의 정확성을 확인하면서 경험·설명·타인의 관점으로 이해를 구성한다고 가정합니다. 교사는 설계자이자 설명·지원·판단의 책임자입니다.</p></article><article><h3>구조</h3><p>사전 증거가 실제 수업 편성에 쓰이고, 개인 미션과 공동 미션이 연결됩니다. 판단의 근거는 학생·동료·교사가 확인하며 인공지능이 최종 권위를 갖지 않습니다.</p></article><article><h3>기제</h3><p>학생의 자기 설명과 서로 응답하는 상호작용, 의미 있는 선택, 도전 조절, 빠른 피드백, 반복 시험이 배움을 일으킬 것으로 가정합니다. 이야기·규칙·동시 과제가 개념 학습을 가리지 않도록 복잡도를 줄입니다.</p></article><article><h3>정합</h3><p>목표 개념을 써야 미션을 해결할 수 있고, 그 개념을 개인이 새 과제에 적용하는지 평가합니다. 시간·접근성·교사 점검 부담·현장 협력 조건이 맞는 범위에서 운영합니다.</p></article></div><p class="tm-note">5주차 발표 5장의 전제·구조·기제·정합 분석 틀을 적용한 자체 설명입니다. 교수 자료의 다섯 요소와 동일한 분류라고 보지 않습니다.</p></details>
+<div class="tm-footer"><a href="./teaching-foundations.html">수업모형·수업 디자인의 기초 →</a><a href="./course-materials.html">앞부분 강의와 전체 공부지도 →</a></div>
+</section>
+
+<section class="tm-section" id="support" aria-labelledby="support-title">
+<p class="tm-kicker">높은 기대와 충분한 지원을 함께</p><h2 id="support-title">교사와 인공지능은 언제, 무엇을 돕는가</h2>
+<div class="tm-matrix gf-small-table" role="region" aria-label="교사 개입과 인공지능 지원" tabindex="0"><table><caption>자동화할 수 있는 준비와 사람이 확인할 판단을 구별합니다.</caption><thead><tr><th scope="col">관찰한 장면</th><th scope="col">교사의 개입</th><th scope="col">인공지능의 가능한 지원과 확인</th></tr></thead><tbody>
+<tr><th scope="row">사전 답은 맞지만 설명이 어려움</th><td>조건이 바뀐 짧은 문답으로 이해를 확인하고 프로필을 보류·수정한다.</td><td>추가 질문 후보를 만들 수 있다. 정답을 냈다는 이유로 이해를 확정하지 않는다.</td></tr>
+<tr><th scope="row">문제에서 계속 막힘</th><td>규칙·개념·전략 중 원인을 살펴 단서 → 부분 예시 → 함께 설명 중 필요한 지원을 제공한다.</td><td>힌트 후보를 제안한다. 교사는 정확성과 인지 부담을 검토한 뒤 제공한다.</td></tr>
+<tr><th scope="row">한 학생이 모두 결정</th><td>역할을 바꾸고 다른 구성원에게 근거 설명과 질문 기회를 준다.</td><td>발언 요약이나 빠진 관점 질문을 돕는다. 발언량으로 기여 등급을 매기지 않는다.</td></tr>
+<tr><th scope="row">인공지능 답을 그대로 제출</th><td>출처 대조, 채택·수정 이유, 새 조건의 개인 설명을 요청한다.</td><td>반론·대안을 제공한다. 존재하지 않는 출처·관찰값을 실제 자료로 쓰지 않는다.</td></tr>
+<tr><th scope="row">쉽게 수행하고 설명 가능</th><td>같은 쉬운 문제를 반복하기보다 도움을 줄이고 조건·관점·제약을 바꾼다.</td><td>확장 과제 후보를 만든다. 교사가 목표 적합성과 난이도를 확인한다.</td></tr>
+</tbody></table></div>
+<p>학생이 도움을 받으면 해결 가능한 범위는 한 번의 점수로 확정하지 않습니다. 교사는 도움 전후의 실제 수행과 새 과제의 반응으로 다음 지원을 판단합니다. 인공지능은 이 판단을 돕는 도구이며 학생의 근접발달영역을 정확하게 자동 측정했다고 주장하지 않습니다.</p>
+<div class="tm-callout"><strong>도움은 줄일 수 있지만, 기대와 소속감은 줄이지 않습니다.</strong><p>학생의 선택권·기여 기회·휴식과 접근성을 유지합니다. 공개 순위, 빠른 학생 독점, 반복 실패의 낙인이 몰입을 깨뜨리는지 살피고 규칙을 수정합니다.</p></div>
+</section>
+
+<section class="tm-section" id="access" aria-labelledby="access-title">
+<p class="tm-kicker">접속 방식이 달라도 같은 목표에 도달하기</p><h2 id="access-title">온라인·교실·종이 경로를 함께 준비한다</h2>
+<div class="tm-shared"><article><h3>온라인 G과정</h3><p>짧은 이야기·과제·설명 기록을 제공합니다. 학생이 속도와 도움을 고르고 교사는 수업 전에 핵심 증거를 검토합니다.</p></article><article><h3>교실 안 준비 경로</h3><p>가정의 기기·시간 조건 때문에 참여하지 못한 학생에게 학교의 준비 시간과 공동 기기를 제공합니다. 준비 과제를 처벌이나 성적 불이익으로 바꾸지 않습니다.</p></article><article><h3>종이 게임 경로</h3><p>이야기 카드, 개인 미션 봉투, 역할 카드, 보드판, 증거 카드로 같은 순환을 운영합니다. 교사와 동료가 인공지능의 질문·힌트 역할을 대신합니다.</p></article><article><h3>원격 참여 경로</h3><p>실시간 참여가 어려우면 근거표·음성 설명·시험 검토를 제출하고 다음 활동에서 응답을 받게 합니다. 현장 참여 횟수보다 맡은 역할의 학습 증거를 확인합니다.</p></article></div>
+<p>스마트 안경·증강현실은 현장에 도면을 겹치거나 실습 단서를 제시하는 선택 도구로 추가할 수 있습니다. 먼저 사진·종이 도면으로 학습 구조를 시험하고, 도구가 개념 이해와 실제 수행에 어떤 도움을 주는지 별도로 살핍니다.</p>
+</section>
+
+<section class="tm-section" id="pilot" aria-labelledby="pilot-title">
+<p class="tm-kicker">완성된 게임보다 먼저 확인할 수업의 작동</p><h2 id="pilot-title">작게 실행하고, 증거로 다음 버전을 만든다</h2>
+<ol class="gf-action-list">
+<li><strong>준비:</strong> 핵심 개념 하나와 작은 공동 문제 하나를 고릅니다. 사전 과제·도움 카드·개인 미션·팀 미션·평가 과제를 함께 만듭니다.</li>
+<li><strong>짧은 시범:</strong> 한 파티가 종이 튜토리얼과 관문 하나를 경험하게 합니다. 규칙 이해에 드는 시간, 증거 기록 부담, 모두의 설명 기회를 관찰합니다.</li>
+<li><strong>첫 단원 운영:</strong> 사전 증거가 파티·미션·지원에 실제로 반영되는지 남깁니다. 공동 결과와 함께 전후의 개인 이해·지원 반응·새 조건 적용을 확인합니다.</li>
+<li><strong>귀환 회의:</strong> 학생에게 재미있었던 순간, 너무 쉬웠거나 어려웠던 지점, 내 선택과 기여가 있었는지를 묻습니다. 교사는 소외·과부하·판정 시간과 현장 조건을 점검합니다.</li>
+<li><strong>수정:</strong> 개념 설명이 빠졌으면 통합 시간을 늘리고, 일부 학생만 기여했으면 역할과 관문을 바꿉니다. 기록 부담이 크면 핵심 장면의 증거만 남기도록 줄입니다.</li>
+</ol>
+<div class="tm-evaluation"><h3>첫 실행에서 답할 연구 질문</h3><ul><li>G과정의 증거가 실제 개인화 설계를 바꾸었는가?</li><li>서로 다른 출발점의 학생이 모두 핵심 개념을 사용하고 설명했는가?</li><li>도움이 줄어도 새 과제에 적용하는 학생의 변화가 확인되는가?</li><li>레이드 기여 규칙이 설명·검증·협력을 늘렸는가, 점수 모으기만 늘렸는가?</li><li>학생이 느낀 몰입과 개념 성취는 각각 어떠했는가?</li><li>교사의 확인 부담과 참여 접근성은 지속할 수 있는 수준인가?</li></ul><p>첫 적용의 전후 변화만으로 이 모형의 인과효과를 입증하지 않습니다. 먼저 실행 가능성과 학습 과정의 문제를 찾고, 이후 대상·비교 조건·측정 방법을 정해 검증합니다.</p></div>
+</section>
+
+<section class="tm-section" id="sources" aria-labelledby="sources-title">
+<p class="tm-kicker">강의에서 확인한 근거와 우리가 새로 설계한 부분</p><h2 id="sources-title">근거 자료를 출발점으로, 새 모형은 함께 검증하기</h2>
+<p><strong>자체 설계:</strong> G-Flipped Learning이라는 이름, G과정의 증거가 파티 편성과 개인·팀 미션을 바꾸는 구조, 진단 뱃지 필드, 협업 기여 판정, 레이드 관문, 학교 쉼터 이야기와 운영안은 이번에 구성한 제안입니다. 아래 자료가 이 통합 모형의 효과를 입증한 것은 아닙니다.</p>
+<ol class="gf-source-list">
+<li id="source-faculty"><strong>이상수, 「수업모형의 의미와 선정전략」 · 교수 자료</strong><span>PDF 물리 3–8쪽: 이론과 모형, 다섯 구성요소, 요소 간 관계. 12·19–24·28쪽: 관점·상황·기대 성과를 고려한 선택. 17–18쪽: 근접발달영역과 도움을 줄여 가는 지원. 이번 모형의 구성과 운영 조건을 점검하는 근거로 사용했습니다.</span></li>
+<li id="source-games"><strong>「게임식수업 발표_강준구, 조수연, 조혜민, 윤정숙, 황지은」 · 7주차 학생 발표자료</strong><span>PDF 물리 9쪽(인쇄 10): 단서 분담·수준별 규칙·빠른 학생 편중 방지. 물리 10쪽(인쇄 11): 교과 개념과 게임 성공 연결, 막힌 원인별 도움, 활동 뒤 개념 정리. 물리 11쪽(인쇄 12): 게임 중 판단과 게임 후 새 문제 확인. 물리 18쪽(인쇄 19): 자율성·유능감·관계성과 몰입 조건. 물리 21쪽(인쇄 22): 목표 정렬·선택·협력·도전·피드백·성찰의 설계 원칙. 발표가 소개한 원리를 참고했으며 효과 수치를 재인용하지 않았습니다.</span></li>
+<li><strong>「문제로 배우기: 문제기반·프로젝트기반·도전기반학습」 · 4주차 학생 발표자료</strong><span>PDF 물리 8–9·11–12·14–17·20쪽: 탐구·수정·실행의 다른 구조, 목표와 조건의 적합성, 개인 이해·산출물·실행·영향을 구분하는 평가.</span></li>
+<li><strong>「경험하며 배우기: 서비스러닝·리빙랩·생산적 실패」 · 5주차 학생 발표자료</strong><span>실제 슬라이드 5장: 전제·구조·기제·정합 분석 틀. 17–18·22–23장: 당사자와 공동 설계하고 반복 시험하며 개인 배움을 확인하기. 26·32·34장: 탐색 뒤 통합 수업과 개인의 새 문제 적용.</span></li>
+<li><strong>「만들며배우기_최종」 · 6주차 학생 발표자료</strong><span>PDF 물리 9·14쪽: 반복 설계와 인공지능 산출물·독립 능력의 구분. 19·22–24쪽: 제작 제약·과정 지원·개인 학습 확인. 28–32쪽: 작품·개념·수정·개인 참여의 증거. 43–44쪽: 열린 결과와 구조화된 수업 운영.</span></li>
+</ol>
+<p class="tm-note">쪽수는 PDF 첫 페이지를 1로 센 실제 위치이며, 슬라이드는 실제 순서입니다. 학생 발표자료는 강의에서 공부한 내용의 2차 자료로 표시했습니다. 원본 파일·대화 이미지·개인정보는 이 페이지에 공개하지 않습니다.</p>
+<div class="tm-footer"><a href="./science-g-flipped.html">우리 과학 수업에 적용하기·발표 준비 →</a><a href="./teaching-foundations.html">모형과 디자인의 기초부터 읽기 →</a><a href="./course-materials.html">관련 교육자료 전체 보기 →</a><a href="./teaching-models.html">다섯 퀘스트 구조 비교 →</a><a href="./game-design.html">기존 게임 설계 기록 →</a></div>
+</section>
+</main>
+<footer class="site-footer"><p>호모 루덴스 · 재미있고 즐겁게 가르치고 배우는 교사를 위하여</p><p>G-Flipped Learning · 자체 설계안 0.1 · 2026년 11월 24일</p></footer>
+</div>
+</body>
+</html>

@@ -19,6 +19,20 @@ def default_comparison(m, side):
 def options(selected):
     return ''.join(f'<option value="{e(m["id"])}"'+(' selected' if m['id']==selected else '')+f'>{e(m["name"])}</option>' for m in models)
 
+def foundation_table(m):
+    foundation = m['foundation']
+    fields = [('전제와 학습자상', 'premise'), ('학습이 일어나는 기제', 'mechanism'),
+              ('사회적 체제와 판단 권한', 'socialSystem'), ('기대하는 직접 효과', 'expectedDirect'),
+              ('기대하는 부수적 효과', 'expectedIncidental'), ('지켜야 할 핵심 원리', 'corePrinciples'),
+              ('경계 조건과 보완', 'boundaries'), ('최소 적용·검증 계획', 'validationPlan'),
+              ('강의 틀과의 연결', 'theoryConnection')]
+    rows = []
+    for label, key in fields:
+        value = foundation[key]
+        content = '<ul>' + ''.join(f'<li>{e(item)}</li>' for item in value) + '</ul>' if isinstance(value, list) else e(value)
+        rows.append(f'<tr><th scope="row">{e(label)}</th><td>{content}</td></tr>')
+    return f'''<details><summary>모형의 전제·원리·성립 조건과 검증 계획</summary><p class="tm-note">{e(foundation['status'])}</p><div class="tm-matrix tm-foundation" role="region" aria-label="{e(m['name'])}의 설계 근거와 적용 조건" tabindex="0"><table><caption>{e(m['name'])} · 수업 흐름이 작동할 조건을 점검하는 설계표</caption><thead><tr><th scope="col">점검할 요소</th><th scope="col">이 모형에서의 설계</th></tr></thead><tbody>{''.join(rows)}</tbody></table></div><p class="tm-note">한 번의 수업 전후 기록은 적용 가능성과 변화의 단서를 보여 줍니다. 모형이 변화를 일으켰다는 인과 효과를 입증하려면 비교 조건과 반복 적용을 포함한 별도 연구 설계가 필요합니다.</p></details>'''
+
 cards = ''.join(f'<article class="tm-card" data-model="{e(m["id"])}"><span>0{i+1} · {e(m["unit"])}</span><h3>{e(m["name"])}</h3><p>{e(m["question"])}</p><a href="#{e(m["id"])}">흐름과 평가 펼쳐 보기 →</a></article>' for i,m in enumerate(models))
 matrix = ''.join(f'<tr><th scope="row"><a href="#{e(m["id"])}">{e(m["name"])}</a></th><td>{e(m["unit"])}</td><td>{e(flow_text(m))}</td><td>{e(m["evaluation"])}</td></tr>' for m in models)
 details = []
@@ -34,6 +48,7 @@ for i,m in enumerate(models):
 <div class="tm-callout"><p><strong>되돌아가는 지점 ↺</strong> {e(m['loop'])}</p><p><strong>다음으로 넘어가는 기준</strong> {e(m['gate'])}</p></div>
 <div class="tm-evaluation"><h3>이 모형의 평가 방식</h3><dl><dt>중심 방법</dt><dd>{e(m['evaluation'])}</dd><dt>수집할 증거</dt><dd>{e(m['evidence'])}</dd><dt>판단 기준</dt><dd><ul>{criteria}</ul></dd><dt>개인 확인 문항</dt><dd>{e(m['assessmentPrompt'])}</dd><dt>평가 뒤 지원</dt><dd>{e(m['feedback'])}</dd></dl><p class="tm-note">{e(m['avoid'])}</p></div>
 <div class="tm-example"><h3>같은 ‘학교 쉼터’ 과제를 이 모형으로 하면</h3><p>{e(m['commonTask'])}</p></div>
+{foundation_table(m)}
 <details><summary>몰입·성장과 교사·인공지능의 역할</summary><div class="tm-shared"><article><h3>몰입을 돕는 장치</h3><p>{e(m['immersion'])}</p></article><article><h3>성장에 따른 지원 변화</h3><p>{e(m['growth'])}</p></article><article><h3>교사의 개입</h3><p>{e(m['teacher'])}</p></article><article><h3>인공지능의 협업 역할</h3><p>{e(m['ai'])}</p></article></div><p><strong>준비할 자료:</strong> {e(m['material'])}</p><p><strong>교과에 옮기기:</strong> {e(m['extension'])}</p></details>
 <p class="tm-note"><a href="#comparison">다른 모형과 나란히 비교하기 ↑</a></p>
 </article>''')
@@ -41,11 +56,13 @@ for i,m in enumerate(models):
 comparison_data = {m['id']:{k:(flow_text(m) if k=='flow' else m[k]) for k in ('name','start','flow','ai','evidence','evaluation','commonTask')} for m in models}
 comparison_json = json.dumps(comparison_data, ensure_ascii=False).replace('<','\\u003c')
 page = f'''<!doctype html>
-<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="몰입·성장과 인공지능 협업을 공유하며 수업 흐름과 평가 방법이 다른 다섯 수업모형. 도전 조절, 증거 논증, 실패·재설계, 역할 협상, 가르치며 성장을 비교합니다."><title>다섯 가지 수업모형 비교 · 호모 루덴스</title><link rel="stylesheet" href="./assets/lab.css"><link rel="stylesheet" href="./assets/teaching-models.css"></head>
-<body><a class="skip-link" href="#main">본문으로 건너뛰기</a><div class="shell"><header class="masthead"><a class="brand" href="./index.html"><span class="brand-mark" aria-hidden="true">✦</span>호모 루덴스</a><nav class="site-nav" aria-label="주 메뉴"><a href="./index.html">홈</a><a href="./teaching-models.html" aria-current="page">수업모형 만들기</a><a href="./game-design.html">우리 게임 설계</a><a href="./korean-study.html">한국어 공부방</a><a href="./lesson-2026-10-27.html">오늘의 학습</a><a href="./research.html">연구 노트</a><a href="./dashboard.html">학습실</a></nav></header>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="몰입·성장과 인공지능 협업을 공유하며 수업 흐름과 평가 방법이 다른 다섯 수업모형. 도전 조절, 증거 논증, 실패·재설계, 역할 협상, 가르치며 성장을 비교합니다."><title>다섯 가지 수업모형 비교 · 호모 루덴스</title><link rel="stylesheet" href="./assets/lab.css"><link rel="stylesheet" href="./assets/teaching-models.css"><style>.tm-foundation table{{min-width:0;width:100%}}.tm-foundation th:first-child{{width:27%;min-width:0}}.tm-foundation td{{min-width:0;overflow-wrap:anywhere}}</style></head>
+<body><a class="skip-link" href="#main">본문으로 건너뛰기</a><div class="shell"><header class="masthead"><a class="brand" href="./index.html"><span class="brand-mark" aria-hidden="true">✦</span>호모 루덴스</a><nav class="site-nav" aria-label="주 메뉴"><a href="./index.html">홈</a><a href="./teaching-foundations.html">수업모형 기초</a><a href="./g-flipped-learning.html">G-Flipped Learning</a><a href="./science-g-flipped.html">과학 수업 적용</a><a href="./teaching-models.html" aria-current="page">모형 비교</a><a href="./course-materials.html">수업 자료실</a><a href="./korean-study.html">한국어 공부방</a></nav></header>
 <main id="main"><header class="tm-hero"><p class="tm-kicker">수업모형 설계실 · 비교 설계안 0.3</p><h1>배움의 원칙은 함께,<br>수업의 구조는 다르게.</h1><p class="tm-lede">몰입·성장과 인공지능 협업을 공통으로 두고,<br><strong>배움을 일으키는 활동과 평가 방식을 다섯 가지로 설계합니다.</strong></p><p>도전, 주장, 시제품, 협상안, 설명. 수업에서 무엇을 반복하고 어떤 증거로 배움을 확인할지에 따라 시작점·활동 순서·교사의 개입·다음 단계로 가는 조건이 달라집니다.</p><nav class="tm-nav" aria-label="수업모형 바로가기"><a href="#overview">다섯 구조 한눈에</a><a href="#comparison">두 모형 나란히 비교</a><a href="#adaptive">모형별 흐름과 평가</a><a href="#choose">수업모형 선택하기</a></nav><p class="tm-note">2026년 11월 24일 · 함께 개발하는 설계 초안입니다. 아래 이름은 비교를 위한 가칭이며, 효과가 검증된 새로운 이론이나 공인된 모형을 뜻하지 않습니다.</p></header>
 
-<section class="tm-section" id="shared"><p class="tm-kicker">모든 모형에 남길 공통 원칙</p><h2>선택할 수 있는 도전, 성장에 맞는 지원, 사람의 판단</h2><div class="tm-shared"><article><h3>몰입</h3><p>의미 있는 목표, 학생의 선택, 즉시 쓸 수 있는 피드백, 해 볼 만한 도전을 마련합니다. 활동 자체의 흥미와 학생이 느끼는 어려움을 함께 살핍니다.</p></article><article><h3>성장</h3><p>처음의 생각·수행과 도움에 대한 반응을 보고 지원을 조절합니다. 익숙해지면 도움을 줄이고 조건을 바꿔 스스로 할 수 있는지 확인합니다.</p></article><article><h3>인공지능 협업</h3><p>힌트 제공자·반론자·설계 검토자·관점 제안자·배우는 역할 중 필요한 역할을 줍니다. 학생은 근거를 확인하고 교사와 함께 결정합니다.</p></article><article><h3>배움의 증거</h3><p>공동 결과물과 개인의 배움을 구분합니다. 몰입 경험도 성취와 따로 확인하며, 기초 지식과 독립 수행을 각 모형에 맞는 방식으로 평가합니다.</p></article></div><div class="tm-callout"><strong>공통 원칙은 지키되, 한 가지 순서를 강제하지 않습니다.</strong><p>앞서 만든 여섯 단계는 <a href="./co-learning-model.html#cycle">통합 탐구형의 흐름 예시</a>로 남깁니다. 아래 모형은 반복 단위와 다음 단계로 넘어가는 조건부터 다르게 설계했습니다.</p></div></section>
+<section class="tm-section" aria-labelledby="foundation-entry"><p class="tm-kicker">기초에서 설계로</p><h2 id="foundation-entry">수업모형의 조건을 알고, 설계안을 비교하기</h2><p>수업모형은 학습이 일어나는 원리와 구조를 설명하고, 수업 디자인은 이를 학생·교과·시간·환경에 맞게 구체화합니다. 각 설계안 아래에는 전제, 핵심 원리, 역할, 기대 효과와 검증 계획을 함께 적었습니다.</p><div class="tm-footer"><a href="./teaching-foundations.html">수업모형·수업 디자인의 기초 →</a><a href="./course-materials.html">앞부분 강의와 교육자료 전체 보기 →</a></div><p class="tm-note">이 페이지의 다섯 모형은 강의의 분석틀을 적용한 자체 설계 가설이며, 효과가 검증된 모형으로 제시하지 않습니다.</p></section>
+
+<section class="tm-callout" id="game-quest-connection"><h2>이 다섯 구조를 게임 속 학습 미션으로 연결합니다</h2><p><a href="./g-flipped-learning.html">G-Flipped Learning</a>은 사전 게임학습의 진단 자료를 바탕으로 파티·개인 미션·팀 미션을 설계하는 중심 모형입니다. 아래 다섯 구조는 연습, 근거 검토, 실험 개선, 협상, 설명 등 서로 다른 퀘스트를 설계하는 데 사용할 수 있습니다.</p><p><a href="./science-g-flipped.html">기존 과학 수업 사례에 적용하기 →</a></p></section><section class="tm-section" id="shared"><p class="tm-kicker">모든 모형에 남길 공통 원칙</p><h2>선택할 수 있는 도전, 성장에 맞는 지원, 사람의 판단</h2><div class="tm-shared"><article><h3>몰입</h3><p>의미 있는 목표, 학생의 선택, 즉시 쓸 수 있는 피드백, 해 볼 만한 도전을 마련합니다. 활동 자체의 흥미와 학생이 느끼는 어려움을 함께 살핍니다.</p></article><article><h3>성장</h3><p>처음의 생각·수행과 도움에 대한 반응을 보고 지원을 조절합니다. 익숙해지면 도움을 줄이고 조건을 바꿔 스스로 할 수 있는지 확인합니다.</p></article><article><h3>인공지능 협업</h3><p>힌트 제공자·반론자·설계 검토자·관점 제안자·배우는 역할 중 필요한 역할을 줍니다. 학생은 근거를 확인하고 교사와 함께 결정합니다.</p></article><article><h3>배움의 증거</h3><p>공동 결과물과 개인의 배움을 구분합니다. 몰입 경험도 성취와 따로 확인하며, 기초 지식과 독립 수행을 각 모형에 맞는 방식으로 평가합니다.</p></article></div><div class="tm-callout"><strong>공통 원칙은 지키되, 한 가지 순서를 강제하지 않습니다.</strong><p>앞서 만든 여섯 단계는 <a href="./co-learning-model.html#cycle">통합 탐구형의 흐름 예시</a>로 남깁니다. 아래 모형은 반복 단위와 다음 단계로 넘어가는 조건부터 다르게 설계했습니다.</p></div></section>
 
 <section class="tm-section" id="overview"><p class="tm-kicker">수업의 중심 활동을 고르기</p><h2>무엇을 반복하며 배우는가?</h2><div class="tm-cards">{cards}</div><div class="tm-matrix" role="region" aria-label="모형별 수업 흐름과 평가 비교표" tabindex="0"><table><caption>좁은 화면에서는 표를 가로로 밀어 볼 수 있습니다. 아래 두 모형 비교는 세로로도 읽을 수 있습니다.</caption><thead><tr><th scope="col">모형</th><th scope="col">반복하는 활동</th><th scope="col">수업 흐름</th><th scope="col">중심 평가 방식</th></tr></thead><tbody>{matrix}</tbody></table></div></section>
 
